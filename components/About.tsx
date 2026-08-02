@@ -25,7 +25,7 @@ export default function About() {
             professional ko'rinishiga yordam berish.
           </p>
             <a
-  href="/Ulugbek-Otabekov-CV.pdf"
+  href="/cv.pdf"
   download
   className="
     inline-flex
