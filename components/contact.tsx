@@ -1,5 +1,9 @@
 import { FaInstagram, FaTelegram,  FaPhone } from "react-icons/fa6";
-export default function Contact() {
+type ContactProps = {
+  t: any;
+};
+
+export default function Contact({ t }: ContactProps) {
   return (
     <section 
       id="contact"
@@ -37,40 +41,35 @@ export default function Contact() {
   font-bold
   leading-tight
 ">
-
-  <span>
-    Birga
-  </span>
-
-  <br />
-
-  <span className="
-    bg-gradient-to-r
-    from-violet-400
-    via-purple-600
-    to-fuchsia-400
-    bg-clip-text
-    text-transparent
-  ">
-    Ishlashga
-  </span>
-
-  <br />
-
-  <span>
-    tayyormisiz?
-  </span>
-
 </h2>
+  <h2 className="text-5xl font-bold leading-tight">
+  <span>{t.contact.line1}</span>
 
+  <br />
 
+  <span
+    className="
+      bg-gradient-to-r
+      from-violet-400
+      via-purple-600
+      to-fuchsia-400
+      bg-clip-text
+      text-transparent
+    "
+  >
+    {t.contact.line2}
+  </span>
+
+  <br />
+
+  <span>{t.contact.line3}</span>
+</h2>
               <p className="
                 mt-6
                 text-gray-400
                 text-lg
               ">
-                Hozir bog‘laning
-                va loyihangizni birgalikda rivojlantiramiz.
+                {t.contact.description}
               </p>
 
 
@@ -96,7 +95,7 @@ export default function Contact() {
                   shadow-[0_0_40px_rgba(139,92,246,.35)]
                 "
               >
-                Bog‘lanish
+                {t.contact.button}
               </a>
 
 
@@ -117,7 +116,7 @@ export default function Contact() {
                 text-2xl
                 font-semibold
               ">
-                Qo‘shimcha kontaktlar
+                {t.contact.contacts}
               </h3>
 
 
@@ -206,15 +205,10 @@ export default function Contact() {
               </div>
 <div className="mt-10 border-l-2 border-violet-500 pl-5 max-w-md">
   <p className="text-gray-400 leading-7">
-    <span className="font-semibold text-white">
-      Har bir ishonch ortida katta mas'uliyat yotadi.
-    </span>
+    </p>
+    <p className="text-gray-400 leading-7 whitespace-pre-line">
+  {t.contact.thanks}
 
-    <br />
-    <br />
-
-    Bizni tanlaganingiz va brendingiz rivojining bir qismiga
-    aylantirganingiz uchun rahmat!
   </p>
 </div>
 

@@ -2,7 +2,11 @@ import HeroGlow from "./HeroGlow";
 import HeroBadge from "./HeroBadge";
 import HeroButtons from "./HeroButtons";
 
-export default function Hero() {
+type HeroProps = {
+  t: any;
+};
+
+export default function Hero({ t }: HeroProps) {
   return (
     <section 
   id="home"
@@ -20,7 +24,7 @@ export default function Hero() {
 
           <div className="relative z-20">
 
-            <HeroBadge />
+            <HeroBadge t={t} />
 
 
             <h1 className="
@@ -40,7 +44,7 @@ export default function Hero() {
                 bg-clip-text
                 text-transparent
               ">
-                Ulug'bek
+                {t.hero.firstName}
               </span>
 
 
@@ -48,7 +52,7 @@ export default function Hero() {
 
 
               <span className="text-white">
-                Otabekov
+               {t.hero.lastName}
               </span>
 
             </h1>
@@ -63,13 +67,15 @@ export default function Hero() {
               max-w-xl
             ">
 
-              Brendingiz va biznesingizni yangi darajaga olib chiqamiz.
+             <span className="text-sm text-gray-300">
+  {t.hero.description}
+</span>
 
             </p>
 
 
 
-            <HeroButtons />
+            <HeroButtons t={t} />
 
 
 
@@ -102,13 +108,9 @@ export default function Hero() {
       50+
     </h3>
 
-    <p className="
-      mt-2
-      text-white/80
-    ">
-      Loyihalar
+    <p className="mt-2 text-white/80">
+  {t.about.projects}
     </p>
-
   </div>
 
 </div>
@@ -141,12 +143,9 @@ export default function Hero() {
       30+
     </h3>
 
-    <p className="
-      mt-2
-      text-white/80
-    ">
-      Mijozlar
-    </p>
+    <p className="mt-2 text-white/80">
+  {t.about.clients}
+</p>
 
   </div>
 
@@ -180,12 +179,14 @@ export default function Hero() {
       3+
     </h3>
 
-    <p className="
-      mt-2
-      text-white/80
-    ">
-      Yil
-    </p>
+    <p
+  className="
+    mt-2
+    text-white/80
+  "
+>
+  {t.about.experience}
+</p>
 
   </div>
 

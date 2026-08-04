@@ -10,18 +10,22 @@ const logos = [
   "/logos/logo9.png",
   "/logos/logo10.png",
 ];
-export default function Clients() {
+type ClientsProps = {
+  t: any;
+};
+
+export default function Clients({ t }: ClientsProps) {
   return (
     <section className="py-24">
 
       <div className="max-w-7xl mx-auto px-8">
 
         <h2 className="text-center text-2xl font-semibold text-white">
-          Ishonch bildirgan mijozlar
+          {t.clients.title}
         </h2>
 
         <p className="mt-3 text-center text-gray-400">
-          Bizneslar va brendlar bilan hamkorlik
+          {t.clients.subtitle}
         </p>
 
         <div

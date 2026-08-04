@@ -1,29 +1,32 @@
 import { Download } from "lucide-react";
-export default function About() {
+type AboutProps = {
+  t: any;
+};
+
+export default function About({ t }: AboutProps) {
   return (
     <section
       id="about"
       className="max-w-7xl mx-auto px-8 py-32"
     >
+  
       <div className="grid lg:grid-cols-2 gap-16 items-center">
 
         <div>
           <p className="uppercase tracking-[8px] text-gray-500 mb-5">
-            Men haqimda
+            {t.about.badge}
           </p>
 
           <h2 className="text-5xl font-bold leading-tight mb-8">
-            Men nafaqat dizayn
+            {t.about.title1}
             <br />
-            balki natija yarataman.
+            {t.about.title2}
           </h2>
 
           <p className="text-gray-400 leading-8 text-lg">
-            Men Brand Dizayner, SMM Menejer va Mobilografman.
-            Mening maqsadim — bizneslarga zamonaviy vizual
-            identika yaratish va ularning ijtimoiy tarmoqlarda
-            professional ko'rinishiga yordam berish.
+          {t.about.text}
           </p>
+          
             <a
   href="/cv.pdf"
   download
@@ -53,7 +56,7 @@ export default function About() {
     strokeWidth={2.5}
   />
 
-  <span>CV yuklab olish</span>
+  <span>{t.about.text}</span>
 </a>
          <div className="grid grid-cols-3 gap-6 mt-20">
 
@@ -73,7 +76,7 @@ export default function About() {
     </h3>
 
     <p className="mt-2 text-white/80">
-      Loyihalar
+      {t.about.projects}
     </p>
 
   </div>
@@ -95,7 +98,7 @@ export default function About() {
     </h3>
 
     <p className="mt-2 text-white/80">
-      Mijozlar
+      {t.about.clients}
     </p>
 
   </div>
@@ -117,7 +120,7 @@ export default function About() {
     </h3>
 
     <p className="mt-2 text-white/80">
-      Yil tajriba
+      {t.about.experience}
     </p>
 
   </div>
