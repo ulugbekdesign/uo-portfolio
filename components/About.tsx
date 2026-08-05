@@ -56,7 +56,7 @@ export default function About({ t }: AboutProps) {
     strokeWidth={2.5}
   />
 
-  <span>{t.about.text}</span>
+  <span>{t.about.download}</span>
 </a>
          <div className="grid grid-cols-3 gap-6 mt-20">
 
