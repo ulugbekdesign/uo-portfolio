@@ -33,16 +33,21 @@ export default function About({ t }: AboutProps) {
   className="
     inline-flex
     items-center
+    justify-center
     gap-3
     mt-10
+    w-full
+    sm:w-auto
     rounded-2xl
     border
     border-white/10
     bg-[#0B0B0B]
-    px-8
+    px-6
+    sm:px-8
     py-4
     font-semibold
     text-white
+    whitespace-nowrap
     transition-all
     duration-300
     hover:scale-105
@@ -50,7 +55,16 @@ export default function About({ t }: AboutProps) {
     hover:shadow-[0_0_35px_rgba(139,92,246,.25)]
   "
 >
- </a>
+  <Download
+    size={22}
+    className="text-violet-500 shrink-0"
+    strokeWidth={2.5}
+  />
+
+  <span className="text-white text-sm sm:text-base">
+    {t.about.download}
+  </span>
+</a>
  
          <div className="grid grid-cols-3 gap-6 mt-20">
 
