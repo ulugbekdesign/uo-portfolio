@@ -47,14 +47,16 @@ export const translations = {
     },
 
     contact: {
-      heading: "Birga\nIshlashga\ntayyormisiz?",
-      description:
-        "Hozir bog'laning va loyihangizni birgalikda rivojlantiramiz.",
-      button: "Bog'lanish",
-      contacts: "Qo'shimcha kontaktlar",
-      thanks:
-        "Har bir ishonch ortida katta mas'uliyat yotadi.\n\nBizni tanlaganingiz va brendingiz rivojining bir qismiga aylantirganingiz uchun rahmat!",
-    },
+  line1: "Birga",
+  line2: "Ishlashga",
+  line3: "tayyormisiz?",
+  description:
+    "Hozir bog'laning va loyihangizni birgalikda rivojlantiramiz.",
+  button: "Bog'lanish",
+  contacts: "Qo'shimcha kontaktlar",
+  thanks:
+    "Har bir ishonch ortida katta mas'uliyat yotadi.\n\nBizni tanlaganingiz va brendingiz rivojining bir qismiga aylantirganingiz uchun rahmat!",
+},
   },
 
   ru: {
@@ -105,14 +107,16 @@ export const translations = {
     },
 
     contact: {
-      heading: "Готовы\nработать\nвместе?",
-      description:
-        "Свяжитесь со мной прямо сейчас, и мы вместе реализуем ваш проект.",
-      button: "Связаться",
-      contacts: "Дополнительные контакты",
-      thanks:
-        "За каждым доверием стоит большая ответственность.\n\nСпасибо, что выбрали меня и доверили развитие своего бренда!",
-    },
+  line1: "Готовы",
+  line2: "работать",
+  line3: "вместе?",
+  description:
+    "Свяжитесь со мной сейчас, и мы вместе развиваем ваш проект.",
+  button: "Связаться",
+  contacts: "Дополнительные контакты",
+  thanks:
+    "За каждым доверием стоит большая ответственность.\n\nСпасибо, что выбрали нас и позволили стать частью развития вашего бренда!",
+},
   },
 } as const;
 

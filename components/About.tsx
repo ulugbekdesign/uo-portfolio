@@ -50,14 +50,8 @@ export default function About({ t }: AboutProps) {
     hover:shadow-[0_0_35px_rgba(139,92,246,.25)]
   "
 >
-  <Download
-    size={22}
-    className="text-violet-500"
-    strokeWidth={2.5}
-  />
-
-  <span>{t.about.download}</span>
-</a>
+ </a>
+ 
          <div className="grid grid-cols-3 gap-6 mt-20">
 
 

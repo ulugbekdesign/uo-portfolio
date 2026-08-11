@@ -36,12 +36,6 @@ export default function Contact({ t }: ContactProps) {
 
             <div>
 
-              <h2 className="
-  text-5xl
-  font-bold
-  leading-tight
-">
-</h2>
   <h2 className="text-5xl font-bold leading-tight">
   <span>{t.contact.line1}</span>
 
