@@ -45,8 +45,9 @@ const projects = [
           uz: "SMM Dizayn",
           ru: "SMM Дизайн",
         },
-        image: "/portfolio/smm/sanfot-school/01-cover.jpg",
+        image: "/portfolio/smm/sanfot-school/00-folder-cover.jpg",
         gallery: [
+          "/portfolio/smm/sanfot-school/00-folder-cover.jpg",
           "/portfolio/smm/sanfot-school/01-cover.jpg",
           "/portfolio/smm/sanfot-school/02-language-day.jpg",
           "/portfolio/smm/sanfot-school/03-result.jpg",
