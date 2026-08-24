@@ -14,7 +14,7 @@ export const translations = {
       lastName: "Otabekov",
       title: "Ulug'bek Otabekov",
       description:
-        "Brand Dizayner, SMM Menejer va Mobilograf. Zamonaviy vizual identika, reklama dizayni va kreativ kontent orqali biznesingizni yangi bosqichga olib chiqaman.",
+        "+3 yillik tajriba — grafik dizayner / digital marketolog.",
       portfolio: "Portfolio",
       contact: "Bog'lanish",
     },
@@ -89,7 +89,7 @@ export const translations = {
       title1: "Я создаю не просто дизайн,",
       title2: "а результат.",
       text:
-        "Я бренд-дизайнер, SMM-менеджер и мобилограф. Помогаю бизнесу создавать современную визуальную айдентику и профессионально выглядеть в социальных сетях.",
+        "+3 года опыта — графический дизайнер / digital-маркетолог.",
       download: "Скачать CV",
 
       projects: "Проектов",
