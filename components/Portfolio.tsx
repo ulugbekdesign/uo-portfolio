@@ -38,19 +38,6 @@ const projects = [
 
   {
     title: {
-      uz: "SMM Kampaniya",
-      ru: "SMM Кампания",
-    },
-    category: "smm" as Category,
-    categoryName: {
-      uz: "SMM",
-      ru: "SMM",
-    },
-    image: "/socialmedia2.jpg",
-  },
-
-  {
-    title: {
       uz: "Veb Dizayn",
       ru: "Веб-дизайн",
     },
@@ -64,19 +51,6 @@ const projects = [
 
   {
     title: {
-      uz: "Landing Page",
-      ru: "Лендинг",
-    },
-    category: "web" as Category,
-    categoryName: {
-      uz: "Veb Dizayn",
-      ru: "Веб-дизайн",
-    },
-    image: "/webdesign2.jpg",
-  },
-
-  {
-    title: {
       uz: "Poster Dizayn",
       ru: "Дизайн постера",
     },
@@ -86,19 +60,6 @@ const projects = [
       ru: "Постер",
     },
     image: "/poster.jpg",
-  },
-
-  {
-    title: {
-      uz: "Kreativ Poster",
-      ru: "Креативный постер",
-    },
-    category: "poster" as Category,
-    categoryName: {
-      uz: "Poster",
-      ru: "Постер",
-    },
-    image: "/poster2.jpg",
   },
 
   {
@@ -125,19 +86,6 @@ const projects = [
       ru: "Полиграфия",
     },
     image: "/poygrafya.jpg",
-  },
-
-  {
-    title: {
-      uz: "Bosma Materiallar",
-      ru: "Печатные материалы",
-    },
-    category: "print" as Category,
-    categoryName: {
-      uz: "Poligrafiya",
-      ru: "Полиграфия",
-    },
-    image: "/polygrafiya2.jpg",
   },
 ];
 
