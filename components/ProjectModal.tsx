@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { X, ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { ArrowLeft, X, ArrowUpRight } from "lucide-react";
 
 type ProjectModalProps = {
   project: any;
@@ -14,6 +14,9 @@ export default function ProjectModal({
   language,
   onClose,
 }: ProjectModalProps) {
+  const [selectedFolder, setSelectedFolder] =
+    useState<any>(null);
+
   useEffect(() => {
     if (!project) return;
 
@@ -21,7 +24,11 @@ export default function ProjectModal({
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        onClose();
+        if (selectedFolder) {
+          setSelectedFolder(null);
+        } else {
+          onClose();
+        }
       }
     };
 
@@ -31,7 +38,7 @@ export default function ProjectModal({
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [project, onClose]);
+  }, [project, onClose, selectedFolder]);
 
   if (!project) return null;
 
@@ -116,7 +123,9 @@ export default function ProjectModal({
     },
   };
 
-  const category = project.category as
+  const displayProject = selectedFolder ?? project;
+
+  const category = displayProject.category as
     | "smm"
     | "web"
     | "poster"
@@ -124,9 +133,9 @@ export default function ProjectModal({
     | "print";
 
   const gallery =
-    project.gallery && project.gallery.length > 0
-      ? project.gallery
-      : [project.image];
+    displayProject.gallery && displayProject.gallery.length > 0
+      ? displayProject.gallery
+      : [displayProject.image];
 
   return (
     <div className="fixed inset-0 z-[999] overflow-y-auto bg-black/95 backdrop-blur-xl">
@@ -134,7 +143,10 @@ export default function ProjectModal({
       {/* CLOSE */}
 
       <button
-        onClick={onClose}
+        onClick={() => {
+          setSelectedFolder(null);
+          onClose();
+        }}
         className="
           fixed
           top-5
@@ -167,6 +179,16 @@ export default function ProjectModal({
 
         <div className="mb-12">
 
+          {selectedFolder && (
+            <button
+              onClick={() => setSelectedFolder(null)}
+              className="mb-6 inline-flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white"
+            >
+              <ArrowLeft size={18} />
+              {language === "uz" ? "SMM loyihalariga qaytish" : "Назад к SMM проектам"}
+            </button>
+          )}
+
           <span
             className="
               inline-flex
@@ -181,7 +203,7 @@ export default function ProjectModal({
               mb-6
             "
           >
-            {project.categoryName[language]}
+            {displayProject.categoryName[language]}
           </span>
 
           <h2
@@ -193,7 +215,7 @@ export default function ProjectModal({
               text-white
             "
           >
-            {project.title[language]}
+            {displayProject.title[language]}
           </h2>
 
           <p
@@ -212,6 +234,43 @@ export default function ProjectModal({
         </div>
 
 
+        {project.subprojects?.length > 0 && !selectedFolder ? (
+          <div>
+            <p className="mb-6 text-xs uppercase tracking-[5px] text-gray-500">
+              {language === "uz" ? "SMM loyihalari" : "SMM проекты"}
+            </p>
+
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              {project.subprojects.map((folder: any) => (
+                <button
+                  key={folder.image}
+                  onClick={() => setSelectedFolder(folder)}
+                  className="group relative min-h-[420px] overflow-hidden rounded-[30px] border border-white/10 bg-[#111] text-left transition-all duration-500 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-[0_20px_70px_rgba(139,92,246,.15)]"
+                >
+                  <img
+                    src={folder.image}
+                    alt={folder.title[language]}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 z-10 p-7">
+                    <span className="mb-3 inline-flex rounded-full border border-white/15 bg-black/35 px-3 py-1.5 text-xs text-white/80 backdrop-blur-xl">
+                      {language === "uz" ? "Loyiha papkasi" : "Папка проекта"}
+                    </span>
+                    <h3 className="text-3xl font-semibold text-white">
+                      {folder.title[language]}
+                    </h3>
+                    <p className="mt-3 text-sm text-white/70">
+                      {language === "uz" ? "6 ta dizaynni ko‘rish →" : "Смотреть 6 дизайнов →"}
+                    </p>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <>
+
         {/* MAIN IMAGE */}
 
         <div
@@ -224,8 +283,8 @@ export default function ProjectModal({
           "
         >
           <img
-            src={project.image}
-            alt={project.title[language]}
+            src={displayProject.image}
+            alt={displayProject.title[language]}
             className="w-full max-h-[780px] object-cover"
           />
         </div>
@@ -277,7 +336,7 @@ export default function ProjectModal({
             </p>
 
             <p className="font-semibold text-white">
-              {project.categoryName[language]}
+              {displayProject.categoryName[language]}
             </p>
           </div>
 
@@ -396,7 +455,7 @@ export default function ProjectModal({
               >
                 <img
                   src={image}
-                  alt={`${project.title[language]} ${index + 1}`}
+                  alt={`${displayProject.title[language]} ${index + 1}`}
                   className="
                     w-full
                     h-full
@@ -410,6 +469,9 @@ export default function ProjectModal({
           </div>
 
         </div>
+
+          </>
+        )}
 
 
         {/* CTA */}
