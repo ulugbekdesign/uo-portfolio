@@ -74,15 +74,15 @@ const projects = [
 
   {
     title: {
-      uz: "Poster Dizayn",
-      ru: "Дизайн постера",
+      uz: "Poligrafiya",
+      ru: "Полиграфия",
     },
-    category: "poster" as Category,
+    category: "print" as Category,
     categoryName: {
-      uz: "Poster",
-      ru: "Постер",
+      uz: "Poligrafiya",
+      ru: "Полиграфия",
     },
-    image: "/poster.jpg",
+    image: "/poygrafya.jpg",
   },
 
   {
@@ -100,15 +100,15 @@ const projects = [
 
   {
     title: {
-      uz: "Poligrafiya",
-      ru: "Полиграфия",
+      uz: "Poster Dizayn",
+      ru: "Дизайн постера",
     },
-    category: "print" as Category,
+    category: "poster" as Category,
     categoryName: {
-      uz: "Poligrafiya",
-      ru: "Полиграфия",
+      uz: "Poster",
+      ru: "Постер",
     },
-    image: "/poygrafya.jpg",
+    image: "/poster.jpg",
   },
 ];
 
